@@ -49,3 +49,8 @@ The front bezel is held by three __small__ screws on left and right sides, and t
 
 The front bezel can only be removed once the digital assembly (the entire MLB/HDD/CD container) has been removed fully.
 
+## IVAD
+
+To turn the CRT on or off, 5V needs to be supplied to pins 4 and 10 as per pinout_ivad.png.
+
+My multimeter indicated that the IVAD pulls 874uA on both pins combined; i.e. 0.874mA. This is thankfully way below the maximum pin output current of an Arduino (40mA). It should be okay to drive these pins directly from Arduino output(s), which saves an otherwise unnecessary relay board. To play it super safe, I will put a resistor in series to limit the current draw. R = 5v / 0.874mA = 572.08 Ω. The closest matching resistor I have on hand is 330 Ω. That'll let the IVAD pull up to 15.15mA, which should be way more thant it needs.
