@@ -125,6 +125,10 @@ This sadly means that you will see nothing at boot time and won't be able to cha
 
 Remember to configure a screen saver to avoid image burn-in. Note that the CRT does not support power saving (DPMS, etc.). However, the CRT will shut off when the PC side of the LattePanda enters sleep or hibernation mode.
 
+### Possible Issues
+
+The defaults the Arduino sketch writes into the EEPROM and sends to the IVAD may be causing light but visible blooming (black text a light gray background has a white smudge fading out into the right). This was not evident in MacOS X so the values being sent by this sketch may not be optimal. The logic board of my eMac no longer works so I cannot make additional visual comparisons.
+
 # Help Wanted
 
 If you are able to sniff the I²C communication via the original eMac logic board and the CRT controller, please help figure out which commands control brightness and which control the G2 voltage. If you find anything interesting or notice something is missing please file a bug.
